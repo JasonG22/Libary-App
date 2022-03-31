@@ -40,7 +40,6 @@ function Book(title, author, status) {
     this.author = author;
     this.status = status;
 }
-
 //Function to add the book to the page
 function addBookToLibary(title, author, status) {
     const book = Object.create(Book.prototype);
@@ -50,7 +49,6 @@ function addBookToLibary(title, author, status) {
 //push book to array
 myLibary.unshift(book);
 //Function to loop through array 
-  
         /* Creates a card to append to the Book Container
            Creates elements and text nodes to container book info
         */
@@ -73,10 +71,11 @@ myLibary.unshift(book);
         bookAuthor.appendChild(bookAuthorTextNode);
         bookCard.appendChild(bookStatus);
         bookStatus.appendChild(bookStatusTextNode);
-
+        
+        //Set ID of Book card to equal the books title
+        bookCard.setAttribute("id", myLibary[0].title);
 
     
 }
-
 
 
