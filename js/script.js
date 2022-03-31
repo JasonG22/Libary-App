@@ -3,11 +3,13 @@
 //Declare var for modal and modal button
 const modalBtn = document.getElementById("modalBtn");
 const modal = document.getElementById("modal");
+const modalClose = document.getElementById("modalClose");
 
 modalBtn.addEventListener("click", function()  {
     modal.style.display = "flex";
     modalBtn.style.display = "none";
 });
+
 
 /*
 Logic for code coming from dom
