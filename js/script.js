@@ -50,8 +50,7 @@ function addBookToLibary(title, author, status) {
 //push book to array
 myLibary.unshift(book);
 //Function to loop through array 
-    for(let prop in myLibary) {
-        console.log(myLibary);
+  
         /* Creates a card to append to the Book Container
            Creates elements and text nodes to container book info
         */
@@ -76,7 +75,7 @@ myLibary.unshift(book);
         bookStatus.appendChild(bookStatusTextNode);
 
 
-    }
+    
 }
 
 
