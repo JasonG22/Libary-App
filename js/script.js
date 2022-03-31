@@ -34,7 +34,13 @@ Add param to addBookToLibary (bookDetails)
 
 
 //Array to hold the books
-let myLibary = [];
+let myLibary = [
+    {
+        "title": "Harry Potter",
+        "author": "JK",
+        "status": "read",
+    },
+];
 
 //Object Constructor for Book
 function Book() {
@@ -43,11 +49,12 @@ function Book() {
 
 //Function to add the book to the page
 function addBookToLibary() {
-//add data attr to book
+
 //push book to array
 }
 
 //Function to loop through array 
 for(let prop in myLibary) {
-    
+    console.table(myLibary[prop]);
+    console.log(myLibary[prop]);
 }
