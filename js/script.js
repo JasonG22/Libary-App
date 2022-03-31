@@ -42,7 +42,7 @@ modalAddBook.addEventListener("click", () => {
     const bookTitle = document.getElementById("title").value;
     const bookAuthor = document.getElementById("author").value;
     const bookStatus = document.getElementById("status").value;
-    addBooktoLibary(bookTitle, bookAuthor, bookStatus);
+    addBookToLibary(bookTitle, bookAuthor, bookStatus);
 });
 
 /*
@@ -66,7 +66,7 @@ function Book(title, author, status) {
 }
 
 //Function to add the book to the page
-function addBookToLibary() {
+function addBookToLibary(title, author, status) {
 
 //push book to array
 }
