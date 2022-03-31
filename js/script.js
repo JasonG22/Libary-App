@@ -73,12 +73,12 @@ function addBookToLibary(title, author, status) {
     book.status = status;
 //push book to array
 myLibary.push(book);
-
+//Function to loop through array 
     for(let prop in myLibary) {
         console.table(myLibary[prop]);
         console.log(myLibary[prop]);
     }
 }
 
-//Function to loop through array 
+
 
