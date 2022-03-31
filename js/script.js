@@ -45,16 +45,6 @@ modalAddBook.addEventListener("click", () => {
     addBookToLibary(bookTitle, bookAuthor, bookStatus);
 });
 
-/*
-Fill out the object constructor params (title, author, status)
-this.title = title
-this.author = author
-this.status = status
-
-Add param to addBookToLibary (bookDetails)
-*/
-
-
 //Array to hold the books
 let myLibary = [];
 
