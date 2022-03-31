@@ -1,3 +1,10 @@
+/* Script for the modal */
+
+//Declare var for modal and modal button
+const modalBtn = document.getElementById("modalBtn");
+const modal = document.getElementById("modal");
+
+
 /*
 Logic for code coming from dom
 create var for addBook Button = get element by ID book
