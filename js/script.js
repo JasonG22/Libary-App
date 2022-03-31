@@ -14,6 +14,10 @@ modalClose.addEventListener("click", () => {
    modal.style.display = "none";
    modalBtn.style.display = "block"; 
 });
+modal.addEventListener("click", () => {
+    modal.style.display = "none";
+    modalBtn.style.display = "block"; 
+ });
 
 /*
 Logic for code coming from dom
