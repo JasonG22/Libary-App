@@ -5,7 +5,7 @@ const modalBtn = document.getElementById("modalBtn");
 const modal = document.getElementById("modal");
 
 modalBtn.addEventListener("click", function()  {
-    modal.style.display = "block";
+    modal.style.display = "flex";
 });
 
 /*
