@@ -51,7 +51,22 @@ function addBookToLibary(title, author, status) {
 myLibary.unshift(book);
 //Function to loop through array 
     for(let prop in myLibary) {
-        
+        console.log(myLibary);
+        const bookContainer = document.getElementById('bookContainer');
+        const bookCard = document.createElement('div');
+        const bookHeading = document.createElement('h2');
+        const bookHeadingTextNode = document.createTextNode(`Book: ${myLibary[0].title}`);
+        const bookAuthor = document.createElement('p');
+        const bookAuthorTextNode = document.createTextNode(`Author: ${myLibary[0].author}`);
+        const bookStatus = document.createElement('p');
+        const bookStatusTextNode = document.createTextNode(`Reading Status: ${myLibary[0].status}`);
+        bookContainer.appendChild(bookCard);
+        bookCard.appendChild(bookHeading);
+        bookHeading.appendChild(bookHeadingTextNode);
+        bookCard.appendChild(bookAuthor);
+        bookAuthor.appendChild(bookAuthorTextNode);
+        bookCard.appendChild(bookStatus);
+        bookStatus.appendChild(bookStatusTextNode);
     }
 }
 
