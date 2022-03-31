@@ -21,15 +21,6 @@ modalClose.addEventListener("click", () => {
 });
 
 /*
-Logic for code coming from dom
-create var for addBook Button = get element by ID book
-add eventListener for addBook click function
-{
-
-
-}
-
-const modalAddBook (button) = get element by ID submitBook
 add event listener for submitBook click function()
 {
 create vat for the following input fields
@@ -44,6 +35,10 @@ book.status = bookStatus
 addBooktoLibary(book)
 }
 */
+modalAddBook.addEventListener("click", () => {
+    modal.style.display = "none";
+    modalBtn.style.display = "block";
+});
 
 /*
 Fill out the object constructor params (title, author, status)
