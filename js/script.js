@@ -34,13 +34,7 @@ Add param to addBookToLibary (bookDetails)
 
 
 //Array to hold the books
-let myLibary = [
-    {
-        "title": "Harry Potter",
-        "author": "JK",
-        "status": "read",
-    },
-];
+let myLibary = [];
 
 //Object Constructor for Book
 function Book() {
