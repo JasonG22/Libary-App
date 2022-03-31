@@ -81,11 +81,12 @@ myLibary.unshift(book);
             Add ID to button to attach Event Listener to
 
         */
-        const bookRemove = document.createElement('button');
-        bookCard.appendChild(bookRemove);
-        bookRemove.setAttribute('type', 'button');
-        bookRemove.setAttribute('id', 'bookRemove');
-        bookRemove.textContent = "Delete BooK";
-}
+        const bookRemoveBtn = document.createElement('button');
+        bookCard.appendChild(bookRemoveBtn);
+        bookRemoveBtn.setAttribute('type', 'button');
+        bookRemoveBtn.setAttribute('id', 'bookRemove');
+        bookRemoveBtn.textContent = "Delete BooK";
 
+        
+}
 
