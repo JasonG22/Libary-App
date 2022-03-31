@@ -47,3 +47,7 @@ function addBookToLibary() {
 //push book to array
 }
 
+//Function to loop through array 
+for(let prop in myLibary) {
+    
+}
