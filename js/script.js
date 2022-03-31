@@ -72,10 +72,20 @@ myLibary.unshift(book);
         bookCard.appendChild(bookStatus);
         bookStatus.appendChild(bookStatusTextNode);
         
-        //Set ID of Book card to equal the books title
+        // Set ID of Book card to equal the books title
+       
         bookCard.setAttribute("id", myLibary[0].title);
 
-    
+        /* 
+            Create remove book button and append to bookCard
+            Add ID to button to attach Event Listener to
+
+        */
+        const bookRemove = document.createElement('button');
+        bookCard.appendChild(bookRemove);
+        bookRemove.setAttribute('type', 'button');
+        bookRemove.setAttribute('id', 'bookRemove');
+        bookRemove.textContent = "Delete BooK";
 }
 
 
