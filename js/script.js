@@ -6,6 +6,7 @@ const modal = document.getElementById("modal");
 
 modalBtn.addEventListener("click", function()  {
     modal.style.display = "flex";
+    modalBtn.style.display = "none";
 });
 
 /*
