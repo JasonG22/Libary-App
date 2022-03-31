@@ -86,7 +86,13 @@ myLibary.unshift(book);
         bookRemoveBtn.setAttribute('type', 'button');
         bookRemoveBtn.setAttribute('id', 'bookRemove');
         bookRemoveBtn.textContent = "Delete BooK";
-
-        
+        const bookRemove = document.getElementById('bookRemove');
+//         if(bookRemoveBtn) {
+//         bookRemoveBtn.addEventListener('click', () => {
+//         const book = bookRemoveBtn.parentNode.id;
+//         console.log(book);
+//         bookContainer.remove(book);
+//     });
+// }
 }
 
