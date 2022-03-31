@@ -48,11 +48,10 @@ function addBookToLibary(title, author, status) {
     book.author = author;
     book.status = status;
 //push book to array
-myLibary.push(book);
+myLibary.unshift(book);
 //Function to loop through array 
     for(let prop in myLibary) {
-        console.table(myLibary[prop]);
-        console.log(myLibary[prop]);
+        
     }
 }
 
