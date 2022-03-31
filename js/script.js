@@ -11,18 +11,13 @@ modalBtn.addEventListener("click", () =>  {
     modalBtn.style.display = "none";
 });
 /*
-The below two event listeners close the modal
-If ther user clicks the 'x' within the modal
-Or if the user clicks outside of modal content 
+The below event listener closes the modal
+If ther user clicks the 'x'
 */ 
 modalClose.addEventListener("click", () => {
    modal.style.display = "none";
    modalBtn.style.display = "block"; 
 });
-modal.addEventListener("click", () => {
-    modal.style.display = "none";
-    modalBtn.style.display = "block"; 
- });
 
 /*
 Logic for code coming from dom
