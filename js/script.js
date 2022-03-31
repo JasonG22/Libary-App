@@ -38,6 +38,11 @@ addBooktoLibary(book)
 modalAddBook.addEventListener("click", () => {
     modal.style.display = "none";
     modalBtn.style.display = "block";
+ 
+    const bookTitle = document.getElementById("title").value;
+    const bookAuthor = document.getElementById("author").value;
+    const bookStatus = document.getElementById("status").value;
+
 });
 
 /*
