@@ -67,12 +67,18 @@ function Book(title, author, status) {
 
 //Function to add the book to the page
 function addBookToLibary(title, author, status) {
-
+    const book = Object.create(Book.prototype);
+    book.title = title;
+    book.author = author;
+    book.status = status;
 //push book to array
+myLibary.push(book);
+
+    for(let prop in myLibary) {
+        console.table(myLibary[prop]);
+        console.log(myLibary[prop]);
+    }
 }
 
 //Function to loop through array 
-for(let prop in myLibary) {
-    console.table(myLibary[prop]);
-    console.log(myLibary[prop]);
-}
+
