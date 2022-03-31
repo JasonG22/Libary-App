@@ -5,11 +5,16 @@ const modalBtn = document.getElementById("modalBtn");
 const modal = document.getElementById("modal");
 const modalClose = document.getElementById("modalClose");
 
+// Event listener to open the modal on click
 modalBtn.addEventListener("click", () =>  {
     modal.style.display = "flex";
     modalBtn.style.display = "none";
 });
-
+/*
+The below two event listeners close the modal
+If ther user clicks the 'x' within the modal
+Or if the user clicks outside of modal content 
+*/ 
 modalClose.addEventListener("click", () => {
    modal.style.display = "none";
    modalBtn.style.display = "block"; 
