@@ -42,6 +42,7 @@ modalAddBook.addEventListener("click", () => {
     const bookTitle = document.getElementById("title").value;
     const bookAuthor = document.getElementById("author").value;
     const bookStatus = document.getElementById("status").value;
+    
 
 });
 
@@ -59,8 +60,10 @@ Add param to addBookToLibary (bookDetails)
 let myLibary = [];
 
 //Object Constructor for Book
-function Book() {
-
+function Book(title, author, status) {
+    this.title = title;
+    this.author = author;
+    this.status = status;
 }
 
 //Function to add the book to the page
