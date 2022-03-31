@@ -20,21 +20,7 @@ modalClose.addEventListener("click", () => {
    modalBtn.style.display = "block"; 
 });
 
-/*
-add event listener for submitBook click function()
-{
-create vat for the following input fields
-const bookTitle = get elemembt by id title
-const bookAuthor = get elemnt by id author
-const bookStatus = get element by id status
-
-const book = object.create(Book);
-book.title = bookTitle
-book.author = bookAuthor
-book.status = bookStatus
-addBooktoLibary(book)
-}
-*/
+ 
 modalAddBook.addEventListener("click", () => {
     modal.style.display = "none";
     modalBtn.style.display = "block";
