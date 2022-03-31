@@ -52,6 +52,9 @@ myLibary.unshift(book);
 //Function to loop through array 
     for(let prop in myLibary) {
         console.log(myLibary);
+        /* Creates a card to append to the Book Container
+           Creates elements and text nodes to container book info
+        */
         const bookContainer = document.getElementById('bookContainer');
         const bookCard = document.createElement('div');
         const bookHeading = document.createElement('h2');
@@ -60,6 +63,10 @@ myLibary.unshift(book);
         const bookAuthorTextNode = document.createTextNode(`Author: ${myLibary[0].author}`);
         const bookStatus = document.createElement('p');
         const bookStatusTextNode = document.createTextNode(`Reading Status: ${myLibary[0].status}`);
+        /* Appends Card to container
+           Appends Elements to card
+           Appends text nodes to elements
+        */
         bookContainer.appendChild(bookCard);
         bookCard.appendChild(bookHeading);
         bookHeading.appendChild(bookHeadingTextNode);
@@ -67,6 +74,8 @@ myLibary.unshift(book);
         bookAuthor.appendChild(bookAuthorTextNode);
         bookCard.appendChild(bookStatus);
         bookStatus.appendChild(bookStatusTextNode);
+
+
     }
 }
 
