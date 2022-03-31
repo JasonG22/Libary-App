@@ -1,6 +1,6 @@
 /* Script for the modal */
 
-//Declare var for modal and modal button
+//Declare var for modal, modalBtn and modalClose
 const modalBtn = document.getElementById("modalBtn");
 const modal = document.getElementById("modal");
 const modalClose = document.getElementById("modalClose");
