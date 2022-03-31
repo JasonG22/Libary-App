@@ -1,9 +1,10 @@
 /* Script for the modal */
 
-//Declare var for modal, modalBtn and modalClose
+//Declare var for modal, modalBtn, modalClose, modalAddBook
 const modalBtn = document.getElementById("modalBtn");
 const modal = document.getElementById("modal");
 const modalClose = document.getElementById("modalClose");
+const modalAddBook = document.getElementById("modalAddBook");
 
 // Event listener to open the modal on click
 modalBtn.addEventListener("click", () =>  {
@@ -28,7 +29,7 @@ add eventListener for addBook click function
 
 }
 
-const submitBook (button) = get element by ID submitBook
+const modalAddBook (button) = get element by ID submitBook
 add event listener for submitBook click function()
 {
 create vat for the following input fields
