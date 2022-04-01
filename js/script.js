@@ -30,13 +30,7 @@ modalAddBook.addEventListener("click", () => {
     let bookAuthor = document.getElementById("author").value;
     let bookStatus = document.getElementById("status").value;
     addBookToLibary(bookTitle, bookAuthor, bookStatus);
-    addBookToPage();
-    function clear() {
-        document.getElementById("title").value = '';
-        bookAuthor = '';
-        bookStatus = '';
-    }
-    clear();
+    addBookToPage(bookTitle, bookAuthor, bookStatus);
     return;
 });
 
@@ -59,13 +53,28 @@ function addBookToLibary(title, author, status) {
 //push book to array
 myLibary.push(userBook);
 const index = myLibary.length;
+console.log(index);
 console.table(myLibary);
 }
 let index;
-function addBookToPage() {
-    for(let prop in myLibary) {
+function addBookToPage(title, author, status) {
+    //const title = title;
+    // const bookCard = document.createElement('table');
+    // const bookCardHead = document.createElement('thead');
+    // const bookHeadRow = document.createElement('tr');
+    // const bookCardBody = document.createElement('tbody');
+    // bookCard.appendChild(bookCardHead);
+    // bookCard.appendChild(bookCardBody);
+    // document.getElementById('bookContainer').innerHTML = `${bookCard}`;
+        // const tableRow = document.createElement('tr');
+        // const tableTitle = document.createElement('td');
+        // tableTitle.textContent = myLibary[prop].title;
+        // tableRow.appendChild(tableTitle);
+        // bookCardBody.appendChild(tableRow);
+        let table = document.getElementById('bookTable');
+        let row = table.insertRow();
+        let cell = row.insertCell();
+        cell.textContent = title;
 
-
-
-}   
+    return;
 }
