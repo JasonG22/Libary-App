@@ -82,7 +82,7 @@ modalAddBook.addEventListener('click', () => {
            
            // Set ID of Book card to equal the books title
           
-           bookCard.setAttribute("id", myLibary[0].title);
+           
 
         /* 
          Create remove book button and append to bookCard
@@ -93,15 +93,5 @@ modalAddBook.addEventListener('click', () => {
         bookRemoveBtn.setAttribute('type', 'button');
         bookRemoveBtn.setAttribute('id', 'bookRemove');
         bookRemoveBtn.textContent = "Delete Book";
-        const id = document.getElementById('bookRemove');
-        if (id) {
-            id.addEventListener('click', () => {
-                const remove = id.parentNode.id;
-                bookContainer.remove(remove);
-                return;
-            });
-        }
-    return;
         
 });
-
