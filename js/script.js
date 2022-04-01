@@ -29,6 +29,8 @@ modalAddBook.addEventListener("click", () => {
     const bookAuthor = document.getElementById("author").value;
     const bookStatus = document.getElementById("status").value;
     addBookToLibary(bookTitle, bookAuthor, bookStatus);
+    createBook();
+    return;
 });
 
 //Array to hold the books
@@ -56,31 +58,29 @@ myLibary.unshift(book);
  
 
 }
-modalAddBook.addEventListener('click', () => {
+function createBook() {
     /* Creates a card to append to the Book Container
            Creates elements and text nodes to container book info
         */
            const bookContainer = document.getElementById('bookContainer');
            const bookCard = document.createElement('div');
            const bookHeading = document.createElement('h2');
+           bookCard.appendChild(bookHeading);
            const bookHeadingTextNode = document.createTextNode(`Book: ${myLibary[0].title}`);
+           bookHeading.appendChild(bookHeadingTextNode);
            const bookAuthor = document.createElement('p');
+           bookCard.appendChild(bookAuthor);
            const bookAuthorTextNode = document.createTextNode(`Author: ${myLibary[0].author}`);
+           bookAuthor.appendChild(bookAuthorTextNode);
            const bookStatus = document.createElement('p');
+           bookCard.appendChild(bookStatus);
            const bookStatusTextNode = document.createTextNode(`Reading Status: ${myLibary[0].status}`);
+           bookStatus.appendChild(bookStatusTextNode);
+           bookContainer.append(bookCard);
            /* Appends Card to container
               Appends Elements to card
               Appends text nodes to elements
            */
-           bookContainer.appendChild(bookCard);
-           bookCard.appendChild(bookHeading);
-           bookHeading.appendChild(bookHeadingTextNode);
-           bookCard.appendChild(bookAuthor);
-           bookAuthor.appendChild(bookAuthorTextNode);
-           bookCard.appendChild(bookStatus);
-           bookStatus.appendChild(bookStatusTextNode);
-           
-           // Set ID of Book card to equal the books title
           
            
 
@@ -94,8 +94,8 @@ modalAddBook.addEventListener('click', () => {
         bookRemoveBtn.setAttribute('id', 'bookRemove');
         bookRemoveBtn.textContent = "Delete Book";
         bookCreated();
-    return;
-});
+    
+}
 function bookCreated() {
     if (document.getElementById('bookRemove')){
         const removeButton = document.getElementById('bookRemove');
