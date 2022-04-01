@@ -64,22 +64,7 @@ console.table(myLibary);
 let index;
 function addBookToPage() {
     for(let prop in myLibary) {
-    index = myLibary.length;
-    const bookCard = document.createElement('div');
-    bookCard.setAttribute('data-book', index);
-    console.log('bookCard index' + index);
-    const title = document.createElement('p');
-    const titleContent = document.createTextNode(myLibary[prop].title);
-    console.log("Arra test" + myLibary.indexOf(myLibary[prop].title))
-    title.appendChild(titleContent);
-    bookCard.appendChild(title);
-    console.log(myLibary[0]);
-    console.log(bookCard.hasAttribute('data-book'));
-    const test = bookCard.getAttribute('data-book', index);
-    console.log('Index value: + ' + index)
-    if(test == index) {
-        document.body.appendChild(bookCard);
-    }
+
 
 
 }   
