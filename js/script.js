@@ -26,11 +26,17 @@ modalAddBook.addEventListener("click", () => {
     modal.style.display = "none";
     modalBtn.style.display = "block";
  
-    const bookTitle = document.getElementById("title").value;
-    const bookAuthor = document.getElementById("author").value;
-    const bookStatus = document.getElementById("status").value;
+    let bookTitle = document.getElementById("title").value;
+    let bookAuthor = document.getElementById("author").value;
+    let bookStatus = document.getElementById("status").value;
     addBookToLibary(bookTitle, bookAuthor, bookStatus);
     addBookToPage();
+    function clear() {
+        document.getElementById("title").value = '';
+        bookAuthor = '';
+        bookStatus = '';
+    }
+    clear();
     return;
 });
 
@@ -42,18 +48,41 @@ function Book(title, author, status) {
     this.title = title;
     this.author = author;
     this.status = status;
+    console.log('Book constructor' + this.title + this.author + this.status)
 }
 
 //Function to add the book to the page
 function addBookToLibary(title, author, status) {
-    const book = Object.create(Book.prototype);
-    book.title = title;
-    book.author = author;
-    book.status = status;
+    let userBook = new Book(title, author, status);
+    console.log("Add book to lib" + userBook);
+    
 //push book to array
-myLibary.unshift(book);
+myLibary.push(userBook);
+const index = myLibary.length;
+console.table(myLibary);
 }
+let index;
 function addBookToPage() {
+    for(let prop in myLibary) {
+    index = myLibary.length;
+    const bookCard = document.createElement('div');
+    bookCard.setAttribute('data-book', index);
+    console.log('bookCard index' + index);
+    const title = document.createElement('p');
+    const titleContent = document.createTextNode(myLibary[prop].title);
+    console.log("Arra test" + myLibary.indexOf(myLibary[prop].title))
+    title.appendChild(titleContent);
+    bookCard.appendChild(title);
+    console.log(myLibary[0]);
+    console.log(bookCard.hasAttribute('data-book'));
+    const test = bookCard.getAttribute('data-book', index);
+    console.log('Index value: + ' + index)
+    if(test == index) {
+        document.body.appendChild(bookCard);
+    }
+
+
+}
     // const bookCard = document.createElement('div');
     // const title = document.createElement('p');
     // const titleContent = document.createTextNode(myLibary[0].title);
