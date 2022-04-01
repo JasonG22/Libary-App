@@ -54,11 +54,6 @@ myLibary.unshift(book);
 
       
  
-        bookRemoveBtn.addEventListener('click', () => {
-        const book = bookRemoveBtn.parentNode.id;
-        console.log(book);
-        bookContainer.remove(book);
-    });
 
 }
 modalAddBook.addEventListener('click', () => {
@@ -100,5 +95,12 @@ modalAddBook.addEventListener('click', () => {
         bookRemoveBtn.textContent = "Delete Book";
         const bookRemove = document.getElementById('bookRemove');
 
+        bookRemoveBtn.addEventListener('click', () => {
+            const book = bookRemoveBtn.parentNode.id;
+            console.log(book);
+            bookContainer.remove(book);
+        });
+
 });
+
 
