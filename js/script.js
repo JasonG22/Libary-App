@@ -54,12 +54,12 @@ function addBookToLibary(title, author, status) {
 myLibary.unshift(book);
 }
 function addBookToPage() {
-    const bookCard = document.createElement('div');
-    const title = document.createElement('p');
-    const titleContent = document.createTextNode(myLibary[0].title);
-    title.appendChild(titleContent);
-    bookCard.appendChild(title);
-    console.log(myLibary[0]);
-    document.body.appendChild(bookCard);
+    // const bookCard = document.createElement('div');
+    // const title = document.createElement('p');
+    // const titleContent = document.createTextNode(myLibary[0].title);
+    // title.appendChild(titleContent);
+    // bookCard.appendChild(title);
+    // console.log(myLibary[0]);
+    // document.body.appendChild(bookCard);
     
 }
