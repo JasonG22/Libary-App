@@ -38,5 +38,8 @@ body {
 }
 
 .book-table {
-    
+    border: 1px solid black;
+}
+.book-table td {
+    border: 1px solid black;
 }
