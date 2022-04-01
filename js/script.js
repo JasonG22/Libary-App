@@ -5,6 +5,7 @@ const modalBtn = document.getElementById("modalBtn");
 const modal = document.getElementById("modal");
 const modalClose = document.getElementById("modalClose");
 const modalAddBook = document.getElementById("modalAddBook");
+const bookContainer = document.getElementById('BookContainer');
 
 // Event listener to open the modal on click
 modalBtn.addEventListener("click", () =>  {
@@ -29,7 +30,7 @@ modalAddBook.addEventListener("click", () => {
     const bookAuthor = document.getElementById("author").value;
     const bookStatus = document.getElementById("status").value;
     addBookToLibary(bookTitle, bookAuthor, bookStatus);
-    createBook();
+    addBookToPage();
     return;
 });
 
@@ -51,4 +52,14 @@ function addBookToLibary(title, author, status) {
     book.status = status;
 //push book to array
 myLibary.unshift(book);
+}
+function addBookToPage() {
+    const bookCard = document.createElement('div');
+    const title = document.createElement('p');
+    const titleContent = document.createTextNode(myLibary[0].title);
+    title.appendChild(titleContent);
+    bookCard.appendChild(title);
+    console.log(myLibary[0]);
+    document.body.appendChild(bookCard);
+    
 }
