@@ -93,5 +93,26 @@ modalAddBook.addEventListener('click', () => {
         bookRemoveBtn.setAttribute('type', 'button');
         bookRemoveBtn.setAttribute('id', 'bookRemove');
         bookRemoveBtn.textContent = "Delete Book";
-        
+        bookCreated();
+    return;
 });
+function bookCreated() {
+    if (document.getElementById('bookRemove')){
+        const removeButton = document.getElementById('bookRemove');
+        console.log('If Statement Works');
+        const parent = removeButton.parentNode; 
+        removeButton.onclick = function() {
+            bookContainer.remove(parent);
+            return;
+        }
+    }
+}   
+ // const bookContainer = document.getElementById('bookContainer');
+    // const removeButton = document.getElementById('bookRemove');
+    // removeButton.onclick = () => { 
+    //     const bookCard = removeButton.parentNode;
+    //     bookContainer.remove(bookCard);
+    // }
+   
+  
+
