@@ -62,21 +62,26 @@ function createBook() {
     /* Creates a card to append to the Book Container
            Creates elements and text nodes to container book info
         */
+       for(let prop in myLibary) {
+           console.log('PROP' + myLibary[prop].title);
+       }
            const bookContainer = document.getElementById('bookContainer');
            const bookCard = document.createElement('div');
            const bookHeading = document.createElement('h2');
-           bookCard.appendChild(bookHeading);
+           
            const bookHeadingTextNode = document.createTextNode(`Book: ${myLibary[0].title}`);
            bookHeading.appendChild(bookHeadingTextNode);
+           bookCard.appendChild(bookHeading);
            const bookAuthor = document.createElement('p');
-           bookCard.appendChild(bookAuthor);
            const bookAuthorTextNode = document.createTextNode(`Author: ${myLibary[0].author}`);
            bookAuthor.appendChild(bookAuthorTextNode);
+           bookCard.appendChild(bookAuthor);
            const bookStatus = document.createElement('p');
-           bookCard.appendChild(bookStatus);
+           
            const bookStatusTextNode = document.createTextNode(`Reading Status: ${myLibary[0].status}`);
            bookStatus.appendChild(bookStatusTextNode);
-           bookContainer.append(bookCard);
+           bookCard.appendChild(bookStatus);
+           bookContainer.appendChild(bookCard);
            /* Appends Card to container
               Appends Elements to card
               Appends text nodes to elements
@@ -98,8 +103,6 @@ function createBook() {
 }
 function bookCreated() {
     if (document.getElementById('bookRemove')){
-        const removeButton = document.getElementById('bookRemove');
-        console.log('If Statement Works');
         const parent = removeButton.parentNode; 
         removeButton.onclick = function() {
             bookContainer.remove(parent);
@@ -107,12 +110,6 @@ function bookCreated() {
         }
     }
 }   
- // const bookContainer = document.getElementById('bookContainer');
-    // const removeButton = document.getElementById('bookRemove');
-    // removeButton.onclick = () => { 
-    //     const bookCard = removeButton.parentNode;
-    //     bookContainer.remove(bookCard);
-    // }
-   
+
   
 
