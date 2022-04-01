@@ -93,14 +93,15 @@ modalAddBook.addEventListener('click', () => {
         bookRemoveBtn.setAttribute('type', 'button');
         bookRemoveBtn.setAttribute('id', 'bookRemove');
         bookRemoveBtn.textContent = "Delete Book";
-        const bookRemove = document.getElementById('bookRemove');
-
-        bookRemoveBtn.addEventListener('click', () => {
-            const book = bookRemoveBtn.parentNode.id;
-            console.log(book);
-            bookContainer.remove(book);
-        });
-
+        const id = document.getElementById('bookRemove');
+        if (id) {
+            id.addEventListener('click', () => {
+                const remove = id.parentNode.id;
+                bookContainer.remove(remove);
+                return;
+            });
+        }
+    return;
+        
 });
-
 
