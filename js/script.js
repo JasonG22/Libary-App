@@ -40,6 +40,7 @@ function Book(title, author, status) {
     this.author = author;
     this.status = status;
 }
+
 //Function to add the book to the page
 function addBookToLibary(title, author, status) {
     const book = Object.create(Book.prototype);
@@ -48,7 +49,7 @@ function addBookToLibary(title, author, status) {
     book.status = status;
 //push book to array
 myLibary.unshift(book);
-//Function to loop through array 
+
         /* Creates a card to append to the Book Container
            Creates elements and text nodes to container book info
         */
@@ -85,14 +86,14 @@ myLibary.unshift(book);
         bookCard.appendChild(bookRemoveBtn);
         bookRemoveBtn.setAttribute('type', 'button');
         bookRemoveBtn.setAttribute('id', 'bookRemove');
-        bookRemoveBtn.textContent = "Delete BooK";
+        bookRemoveBtn.textContent = "Delete Book";
         const bookRemove = document.getElementById('bookRemove');
-//         if(bookRemoveBtn) {
-//         bookRemoveBtn.addEventListener('click', () => {
-//         const book = bookRemoveBtn.parentNode.id;
-//         console.log(book);
-//         bookContainer.remove(book);
-//     });
-// }
+ 
+        bookRemoveBtn.addEventListener('click', () => {
+        const book = bookRemoveBtn.parentNode.id;
+        console.log(book);
+        bookContainer.remove(book);
+    });
+
 }
 
