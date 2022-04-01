@@ -50,32 +50,7 @@ function addBookToLibary(title, author, status) {
 //push book to array
 myLibary.unshift(book);
 
-        /* Creates a card to append to the Book Container
-           Creates elements and text nodes to container book info
-        */
-        const bookContainer = document.getElementById('bookContainer');
-        const bookCard = document.createElement('div');
-        const bookHeading = document.createElement('h2');
-        const bookHeadingTextNode = document.createTextNode(`Book: ${myLibary[0].title}`);
-        const bookAuthor = document.createElement('p');
-        const bookAuthorTextNode = document.createTextNode(`Author: ${myLibary[0].author}`);
-        const bookStatus = document.createElement('p');
-        const bookStatusTextNode = document.createTextNode(`Reading Status: ${myLibary[0].status}`);
-        /* Appends Card to container
-           Appends Elements to card
-           Appends text nodes to elements
-        */
-        bookContainer.appendChild(bookCard);
-        bookCard.appendChild(bookHeading);
-        bookHeading.appendChild(bookHeadingTextNode);
-        bookCard.appendChild(bookAuthor);
-        bookAuthor.appendChild(bookAuthorTextNode);
-        bookCard.appendChild(bookStatus);
-        bookStatus.appendChild(bookStatusTextNode);
         
-        // Set ID of Book card to equal the books title
-       
-        bookCard.setAttribute("id", myLibary[0].title);
 
         /* 
             Create remove book button and append to bookCard
@@ -96,4 +71,33 @@ myLibary.unshift(book);
     });
 
 }
+modalAddBook.addEventListener('click', () => {
+    /* Creates a card to append to the Book Container
+           Creates elements and text nodes to container book info
+        */
+           const bookContainer = document.getElementById('bookContainer');
+           const bookCard = document.createElement('div');
+           const bookHeading = document.createElement('h2');
+           const bookHeadingTextNode = document.createTextNode(`Book: ${myLibary[0].title}`);
+           const bookAuthor = document.createElement('p');
+           const bookAuthorTextNode = document.createTextNode(`Author: ${myLibary[0].author}`);
+           const bookStatus = document.createElement('p');
+           const bookStatusTextNode = document.createTextNode(`Reading Status: ${myLibary[0].status}`);
+           /* Appends Card to container
+              Appends Elements to card
+              Appends text nodes to elements
+           */
+           bookContainer.appendChild(bookCard);
+           bookCard.appendChild(bookHeading);
+           bookHeading.appendChild(bookHeadingTextNode);
+           bookCard.appendChild(bookAuthor);
+           bookAuthor.appendChild(bookAuthorTextNode);
+           bookCard.appendChild(bookStatus);
+           bookStatus.appendChild(bookStatusTextNode);
+           
+           // Set ID of Book card to equal the books title
+          
+           bookCard.setAttribute("id", myLibary[0].title);
+
+});
 
