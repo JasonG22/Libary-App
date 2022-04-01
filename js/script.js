@@ -52,17 +52,7 @@ myLibary.unshift(book);
 
         
 
-        /* 
-            Create remove book button and append to bookCard
-            Add ID to button to attach Event Listener to
-
-        */
-        const bookRemoveBtn = document.createElement('button');
-        bookCard.appendChild(bookRemoveBtn);
-        bookRemoveBtn.setAttribute('type', 'button');
-        bookRemoveBtn.setAttribute('id', 'bookRemove');
-        bookRemoveBtn.textContent = "Delete Book";
-        const bookRemove = document.getElementById('bookRemove');
+      
  
         bookRemoveBtn.addEventListener('click', () => {
         const book = bookRemoveBtn.parentNode.id;
@@ -98,6 +88,17 @@ modalAddBook.addEventListener('click', () => {
            // Set ID of Book card to equal the books title
           
            bookCard.setAttribute("id", myLibary[0].title);
+
+        /* 
+         Create remove book button and append to bookCard
+        Add ID to button to attach Event Listener to
+        */
+        const bookRemoveBtn = document.createElement('button');
+        bookCard.appendChild(bookRemoveBtn);
+        bookRemoveBtn.setAttribute('type', 'button');
+        bookRemoveBtn.setAttribute('id', 'bookRemove');
+        bookRemoveBtn.textContent = "Delete Book";
+        const bookRemove = document.getElementById('bookRemove');
 
 });
 
