@@ -80,16 +80,16 @@ function addBookToPage(title, author, status) {
         // authorCell.textContent = author;
         // let readCell = row.insertCell();
         // readCell.textContent = status;
-        for(let prop in myLibary) {
-        let table = document.getElementById('bookTable');
-        let row = table.insertRow();
-        let titleCell = row.insertCell();
-        titleCell.textContent = title;
-        let authorCell = row.insertCell();
-        authorCell.textContent = author;
-        let readCell = row.insertCell();
-        readCell.textContent = status;
-        }
+        // for(let prop in myLibary) {
+        // let table = document.getElementById('bookTable');
+        // let row = table.insertRow();
+        // let titleCell = row.insertCell();
+        // titleCell.textContent = title;
+        // let authorCell = row.insertCell();
+        // authorCell.textContent = author;
+        // let readCell = row.insertCell();
+        // readCell.textContent = status;
+        // }
 
     return;
 }
