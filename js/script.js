@@ -73,8 +73,8 @@ function addBookToPage(title, author, status) {
         // bookCardBody.appendChild(tableRow);
         let table = document.getElementById('bookTable');
         let row = table.insertRow();
-        let cell = row.insertCell();
-        cell.textContent = title;
+        let titleCell = row.insertCell();
+        titleCell.textContent = title;
 
     return;
 }
