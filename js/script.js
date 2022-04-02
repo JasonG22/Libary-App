@@ -55,7 +55,6 @@ function addBookToLibary(title, author, status) {
     //push book to array
     myLibary.push(userBook);
     console.table(myLibary);
-    console.log(index);
 }
 function addBookToPage(title, author, status) {
     //const title = title;
@@ -81,8 +80,8 @@ function addBookToPage(title, author, status) {
         // let readCell = row.insertCell();
         // readCell.textContent = status;
         // for(let prop in myLibary) {
-        // let table = document.getElementById('bookTable');
-        // let row = table.insertRow();
+        let table = document.getElementById('bookTable');
+        let row = table.insertRow();
         // let titleCell = row.insertCell();
         // titleCell.textContent = title;
         // let authorCell = row.insertCell();
@@ -90,6 +89,17 @@ function addBookToPage(title, author, status) {
         // let readCell = row.insertCell();
         // readCell.textContent = status;
         // }
+        for(let prop in myLibary) {
+            if(!myLibary[prop].addedToPage) {
+                let titleCell = row.insertCell();
+                titleCell.textContent = title;
+                let authorCell = row.insertCell();
+                authorCell.textContent = author;
+                let readCell = row.insertCell();
+                readCell.textContent = status;
+                myLibary[prop].addedToPage = true;
+            }
+        }
 
     return;
 }
