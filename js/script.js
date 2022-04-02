@@ -80,7 +80,7 @@ function addBookToPage(title, author, status) {
         // let readCell = row.insertCell();
         // readCell.textContent = status;
         // for(let prop in myLibary) {
-        let table = document.getElementById('bookTable');
+        let table = document.getElementById('bookBody');
         let row = table.insertRow();
         // let titleCell = row.insertCell();
         // titleCell.textContent = title;
