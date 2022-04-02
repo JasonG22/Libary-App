@@ -32,13 +32,7 @@ modalAddBook.addEventListener("click", () => {
     addBookToLibary(bookTitle, bookAuthor, bookStatus);
     addBookToPage(bookTitle, bookAuthor, bookStatus);
     
-    const removeButtons = document.querySelectorAll("button[data-book]");
-    removeButtons.addEventListener('click', function(removeButtons) {
-    const book = this.id;
-    const tableBody = document.getElementById('bookBody');
-    tableBody.remove(book);
-    myLibary.splice(book, 1);
-    });
+    
     return;
 });
 
@@ -95,7 +89,7 @@ function addBookToPage(title, author, status) {
         // readCell.textContent = status;
         // for(let prop in myLibary) {
         let table = document.getElementById('bookBody');
-        let row = table.insertRow();
+        
         // let titleCell = row.insertCell();
         // titleCell.textContent = title;
         // let authorCell = row.insertCell();
@@ -105,6 +99,7 @@ function addBookToPage(title, author, status) {
         // }
         for(let prop in myLibary) {
             if(!myLibary[prop].addedToPage) {
+                let row = table.insertRow(-1);
                 let titleCell = row.insertCell();
                 titleCell.textContent = title;
                 let authorCell = row.insertCell();
