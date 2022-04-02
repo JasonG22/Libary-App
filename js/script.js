@@ -101,6 +101,8 @@ function addBookToPage(title, author, status) {
                 let removeButton = document.createElement('button');
                 removeBook.appendChild(removeButton);
                 removeButton.textContent = `Remove Book`;
+                const bookIndex = myLibary[prop].index;
+                removeButton.setAttribute('id', bookIndex);
                 myLibary[prop].addedToPage = true;
             }
         }
