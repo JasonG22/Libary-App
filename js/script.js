@@ -32,15 +32,13 @@ modalAddBook.addEventListener("click", () => {
     addBookToLibary(bookTitle, bookAuthor, bookStatus);
     addBookToPage(bookTitle, bookAuthor, bookStatus);
     
-    // if(myLibary.length >  0) {
-    // const bookRemove = document.querySelectorAll('book');
-    // let tableBody = document.getElementById('bookBody');
-    // bookRemove.addEventListener('click', function () {
-
-    //         const row = bookRemove.parentElement.parentElement;
-    //         tableBody.remove(row);
-    //     });
-    // }
+    const removeButtons = document.querySelectorAll("button[data-book]");
+    removeButtons.addEventListener('click', function(removeButtons) {
+    const book = this.id;
+    const tableBody = document.getElementById('bookBody');
+    tableBody.remove(book);
+    myLibary.splice(book, 1);
+    });
     return;
 });
 
@@ -66,10 +64,11 @@ function addBookToLibary(title, author, status) {
     myLibary.push(userBook);
     console.table(myLibary);
 }
-const removeRow = function(id) {
-    
-    return console.log(id);
- }
+// const tableBody = document.getElementById('bookBody');
+// tableBody..addEventListener('click', function() {
+//     console.log('Woo this actually worked');
+// });
+
 
 function addBookToPage(title, author, status) {
     //const title = title;
@@ -118,8 +117,9 @@ function addBookToPage(title, author, status) {
                 removeButton.textContent = `Remove Book`;
                 const bookIndex = myLibary[prop].index;
                 removeButton.setAttribute('id', bookIndex);
+                removeButton.setAttribute('data-book', 'book-button');
                 const bookId = removeButton.id;
-                removeButton.setAttribute('onclick', removeRow(bookId));
+                // removeButton.setAttribute('click', 'removeRow()');
                 myLibary[prop].addedToPage = true;
                 
             }
