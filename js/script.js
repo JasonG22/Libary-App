@@ -97,6 +97,10 @@ function addBookToPage(title, author, status) {
                 authorCell.textContent = author;
                 let readCell = row.insertCell();
                 readCell.textContent = status;
+                let removeBook = row.insertCell();
+                let removeButton = document.createElement('button');
+                removeBook.appendChild(removeButton);
+                removeButton.textContent = `Remove Book`;
                 myLibary[prop].addedToPage = true;
             }
         }
