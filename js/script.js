@@ -49,14 +49,14 @@ function Book(title, author, status) {
 function addBookToLibary(title, author, status) {
     let userBook = new Book(title, author, status);
     console.log("Add book to lib" + userBook);
+    userBook.addedToPage = false;
+    userBook.index = myLibary.length;
     
-//push book to array
-myLibary.push(userBook);
-const index = myLibary.length;
-console.log(index);
-console.table(myLibary);
+    //push book to array
+    myLibary.push(userBook);
+    console.table(myLibary);
+    console.log(index);
 }
-let index;
 function addBookToPage(title, author, status) {
     //const title = title;
     // const bookCard = document.createElement('table');
@@ -71,10 +71,25 @@ function addBookToPage(title, author, status) {
         // tableTitle.textContent = myLibary[prop].title;
         // tableRow.appendChild(tableTitle);
         // bookCardBody.appendChild(tableRow);
+
+        // let table = document.getElementById('bookTable');
+        // let row = table.insertRow();
+        // let titleCell = row.insertCell();
+        // titleCell.textContent = title;
+        // let authorCell = row.insertCell();
+        // authorCell.textContent = author;
+        // let readCell = row.insertCell();
+        // readCell.textContent = status;
+        for(let prop in myLibary) {
         let table = document.getElementById('bookTable');
         let row = table.insertRow();
         let titleCell = row.insertCell();
         titleCell.textContent = title;
+        let authorCell = row.insertCell();
+        authorCell.textContent = author;
+        let readCell = row.insertCell();
+        readCell.textContent = status;
+        }
 
     return;
 }
