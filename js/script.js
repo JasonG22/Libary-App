@@ -31,6 +31,16 @@ modalAddBook.addEventListener("click", () => {
     let bookStatus = document.getElementById("status").value;
     addBookToLibary(bookTitle, bookAuthor, bookStatus);
     addBookToPage(bookTitle, bookAuthor, bookStatus);
+    
+    if(myLibary.length >  0) {
+    const bookRemove = document.querySelectorAll('book');
+    let tableBody = document.getElementById('bookBody');
+    bookRemove.addEventListener('click', function () {
+
+            const row = bookRemove.parentElement.parentElement;
+            tableBody.remove(row);
+        });
+    }
     return;
 });
 
@@ -102,11 +112,12 @@ function addBookToPage(title, author, status) {
                 removeBook.appendChild(removeButton);
                 removeButton.textContent = `Remove Book`;
                 const bookIndex = myLibary[prop].index;
-                removeButton.setAttribute('id', bookIndex);
-                removeButton.setAttribute('data-Remove', bookIndex);
+                removeButton.setAttribute('id', 'book');
+                removeButton.setAttribute('data-Remove', 'book');
                 myLibary[prop].addedToPage = true;
+                
             }
         }
 
     return;
-}
+} 
