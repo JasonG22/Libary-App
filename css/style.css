@@ -16,7 +16,13 @@ body {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.4);
 }
-
+.modal-Btn {
+    margin: 2rem 0;
+    border-style: none;
+    border-radius: 0px;
+    outline: none;
+    padding: 1rem 4rem;
+}
 .modal-content {
     position: relative;
     background-color: #fff;
