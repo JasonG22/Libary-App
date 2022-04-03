@@ -131,7 +131,6 @@ function addBookToPage(title, author, status) {
                 const bookIndex = myLibary[prop].index;
                 removeButton.setAttribute('id', bookIndex);
                 removeButton.setAttribute('data-book', 'book-button');
-                const bookId = removeButton.id;
                 removeButton.setAttribute('onclick', 'removeRow(this)');
                 
                 console.table(myLibary)
