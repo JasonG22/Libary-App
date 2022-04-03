@@ -70,11 +70,15 @@ function removeRow(btn) {
     return
 }
 function toggleStatus(btn){
-    let status = btn.textContent;
-    if (status === 'Read') {
-        btn.textContent = 'Unread';
-    } else {
-        btn.textContent = 'Read';
+    for(let prop in myLibary) {
+        let status = btn.textContent;
+        if (status === 'Read') {
+            btn.textContent = 'Unread';
+            myLibary[prop].status = 'Unread';
+        } else {
+            btn.textContent = 'Read';
+            myLibary[prop].status = 'Read';
+        }
     }
 }
 function addBookToPage(title, author, status) {
