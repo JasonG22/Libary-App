@@ -18,12 +18,20 @@ th {
     background-color: var(--table-head);
 }
 tbody:before {line-height:1em; content:"\200C"; display:block;}
-tbody tr{
-    background-color: #F1EDEE;
-}
+
 /* ---------- ID Selector Styling ----------*/ 
 #bookContainer {
     width: 100%;
+}
+#modalAddBook {
+    background-color: #DB5461;
+    color: var(--white-color);
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    border-style: none;
+    border-radius: 0px;
+    outline: none;
+    padding: 1rem 4rem;
 }
 /* ---------- Class Selector Styling ----------*/
 .modal {
@@ -45,7 +53,7 @@ tbody tr{
 }
 .modal-content {
     position: relative;
-    background-color: #fff;
+    background-color: var(--table-head);
     border: 1px solid black;
     padding: 24px;
     margin: auto;
