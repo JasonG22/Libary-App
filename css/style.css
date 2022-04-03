@@ -1,5 +1,7 @@
 :root {
     --white-color: #F1EDEE;
+    --table-head: #3D5467;
+
     --background: #131513;
 }
 /* ---------- Global Styles ---------- */
@@ -7,11 +9,15 @@ html,
 body {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body {
     background-color: var(--background);
 }
-
+th {
+    padding-right: 10px;
+    margin-right: 2rem;
+}
 /* ---------- ID Selector Styling ----------*/ 
 
 /* ---------- Class Selector Styling ----------*/
@@ -58,8 +64,14 @@ body {
     align-items: center;
 }
 .book-table {
+    background-color: var(--table-head);
     border: 1px solid black;
 }
 .book-table td {
     border: 1px solid black;
 }
+.th-seperator {
+    border-right: 1px solid white;
+}
+ 
+    
