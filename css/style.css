@@ -36,7 +36,12 @@ body {
 .close:hover {
     cursor: default;
 }
-
+.wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
 .book-table {
     border: 1px solid black;
 }
