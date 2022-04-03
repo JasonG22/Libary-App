@@ -9,6 +9,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    width: 100vw;
     box-sizing: border-box;
 }
 body {
@@ -16,10 +17,12 @@ body {
 }
 th {
     padding-right: 10px;
-    margin-right: 2rem;
+    margin-left: 50px;
 }
 /* ---------- ID Selector Styling ----------*/ 
-
+#bookContainer {
+    width: 100%;
+}
 /* ---------- Class Selector Styling ----------*/
 .modal {
     display: none;
@@ -58,17 +61,22 @@ th {
     cursor: default;
 }
 .wrapper {
+    width: 100%;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
 }
+
 .book-table {
+    width: 80%;
     background-color: var(--table-head);
     border: 1px solid black;
+    margin: 0 auto;
 }
-.book-table td {
+.book-Body td {
     border: 1px solid black;
+    width: 25%;
 }
 .th-seperator {
     border-right: 1px solid white;
