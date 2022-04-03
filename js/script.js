@@ -69,6 +69,14 @@ function removeRow(btn) {
     myLibary = myLibary.filter(Book => Book.index != index);
     return
 }
+function toggleStatus(btn){
+    let status = btn.textContent;
+    if (status === 'Read') {
+        btn.textContent = 'Unread';
+    } else {
+        btn.textContent = 'Read';
+    }
+}
 function addBookToPage(title, author, status) {
     //const title = title;
     // const bookCard = document.createElement('table');
@@ -115,6 +123,7 @@ function addBookToPage(title, author, status) {
                 let readCellButton = document.createElement('button');
                 readCellButton.textContent = status;
                 readCell.appendChild(readCellButton);
+                readCellButton.setAttribute('onclick', 'toggleStatus(this)');
                 let removeBook = row.insertCell();
                 let removeButton = document.createElement('button');
                 removeBook.appendChild(removeButton);
