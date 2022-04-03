@@ -5,7 +5,7 @@
     --background: #131513;
 }
 :focus {
-    border: 3px solid  #DB5461;
+    border: 3px solid #DB5461;
     outline: none;
 }
 /* ---------- Global Styles ---------- */
@@ -62,6 +62,10 @@ tbody:before {line-height:1em; content:"\200C"; display:block;}
     padding: 24px;
     margin: auto;
     width: 80%;
+}
+.modal h1 {
+    font-size: 2.5rem;
+    color: var(--white-color);
 }
 
 .close {
