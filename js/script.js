@@ -32,7 +32,7 @@ modalAddBook.addEventListener("click", () => {
     addBookToLibary(bookTitle, bookAuthor, bookStatus);
     addBookToPage(bookTitle, bookAuthor, bookStatus);
     
-    
+    console.log(myLibary.indexOf('test'));
     return;
 });
 
@@ -99,6 +99,7 @@ function addBookToPage(title, author, status) {
         // }
         for(let prop in myLibary) {
             if(!myLibary[prop].addedToPage) {
+                myLibary[prop].addedToPage = true;
                 let row = table.insertRow(-1);
                 let titleCell = row.insertCell();
                 titleCell.textContent = title;
@@ -114,8 +115,7 @@ function addBookToPage(title, author, status) {
                 removeButton.setAttribute('id', bookIndex);
                 removeButton.setAttribute('data-book', 'book-button');
                 const bookId = removeButton.id;
-                // removeButton.setAttribute('click', 'removeRow()');
-                myLibary[prop].addedToPage = true;
+                
                 
             }
         }
