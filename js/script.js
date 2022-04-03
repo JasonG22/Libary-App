@@ -38,6 +38,10 @@ modalAddBook.addEventListener("click", () => {
     addBookToLibary(bookTitle, bookAuthor, bookStatus);
     addBookToPage(bookTitle, bookAuthor, bookStatus);
 
+    document.getElementById("title").value = '';
+    document.getElementById("author").value = '';
+    document.getElementById("status").value = 'Read';
+
     return;
 });
 
@@ -94,6 +98,7 @@ function toggleStatus(btn){
             btn.textContent = 'Read';
             myLibary[prop].status = 'Read';
         }
+        return;
     }
 }
 /*
