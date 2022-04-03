@@ -19,6 +19,14 @@ th {
     padding-right: 10px;
     margin-left: 50px;
 }
+td button {
+    width: 100%;
+    background-color: #DB5461;
+    color: var(--white-color);
+    outline: none;
+    border-style: none;
+    border-radius: 0px;
+}
 /* ---------- ID Selector Styling ----------*/ 
 #bookContainer {
     width: 100%;
