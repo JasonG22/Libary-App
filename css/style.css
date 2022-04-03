@@ -75,11 +75,12 @@ th {
     margin: 0 auto;
 }
 .book-Body td {
-    border: 1px solid black;
+    border-right: 1px solid white;
     width: 25%;
 }
 .th-seperator {
     border-right: 1px solid white;
+    border-bottom: 1px solid white;
 }
  
     
