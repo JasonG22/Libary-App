@@ -62,8 +62,17 @@ function addBookToLibary(title, author, status) {
 // tableBody..addEventListener('click', function() {
 //     console.log('Woo this actually worked');
 // });
-
-
+function removeRow(btn) {
+    const row = btn.parentNode.parentNode;
+    for(let prop in myLibary) {
+        myLibary[prop].addedToPage = false;
+        if (myLibary[prop].addedToPage === false) {
+            row.parentNode.removeChild(row);
+            const index = btn.id;
+            myLibary = myLibary.filter(Book => Book.index != index);
+        }
+    }
+}
 function addBookToPage(title, author, status) {
     //const title = title;
     // const bookCard = document.createElement('table');
@@ -97,6 +106,7 @@ function addBookToPage(title, author, status) {
         // let readCell = row.insertCell();
         // readCell.textContent = status;
         // }
+      
         for(let prop in myLibary) {
             if(!myLibary[prop].addedToPage) {
                 myLibary[prop].addedToPage = true;
@@ -115,10 +125,12 @@ function addBookToPage(title, author, status) {
                 removeButton.setAttribute('id', bookIndex);
                 removeButton.setAttribute('data-book', 'book-button');
                 const bookId = removeButton.id;
+                removeButton.setAttribute('onclick', 'removeRow(this)');
                 
+                console.table(myLibary)
                 
             }
         }
-
+     
     return;
 } 
