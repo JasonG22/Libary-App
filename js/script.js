@@ -21,7 +21,13 @@ modalClose.addEventListener("click", () => {
    modalBtn.style.display = "block"; 
 });
 
- 
+/*
+Event listener for when the user clicks add book btn on modal
+Defines variables based on users input
+Calls the addBookToLibary func
+Calls addBookToPage func
+Passes variables declared from user input to funcs
+*/
 modalAddBook.addEventListener("click", () => {
     modal.style.display = "none";
     modalBtn.style.display = "block";
@@ -31,8 +37,7 @@ modalAddBook.addEventListener("click", () => {
     let bookStatus = document.getElementById("status").value;
     addBookToLibary(bookTitle, bookAuthor, bookStatus);
     addBookToPage(bookTitle, bookAuthor, bookStatus);
-    
-    console.log(myLibary.indexOf('test'));
+
     return;
 });
 
@@ -44,31 +49,41 @@ function Book(title, author, status) {
     this.title = title;
     this.author = author;
     this.status = status;
-    console.log('Book constructor' + this.title + this.author + this.status)
 }
-
-//Function to add the book to the page
+/*
+Function to add the book to the page
+Adds addedToPage name/value to obj
+Adds index name/value to obj - Important
+The index is used to match the Array index to the object later
+*/
 function addBookToLibary(title, author, status) {
     let userBook = new Book(title, author, status);
-    console.log("Add book to lib" + userBook);
     userBook.addedToPage = false;
     userBook.index = myLibary.length;
     
     //push book to array
     myLibary.push(userBook);
-    console.table(myLibary);
 }
-// const tableBody = document.getElementById('bookBody');
-// tableBody..addEventListener('click', function() {
-//     console.log('Woo this actually worked');
-// });
+/*
+Function to remove the row from the table on user click
+Gets the row of the clicked button and calls the rows
+parent to remove the row
+Then removed the row object from the array using the index number
+which has been assigned to the remove button
+*/
 function removeRow(btn) {
     const row = btn.parentNode.parentNode;
     row.parentNode.removeChild(row);
     const index = btn.id;
     myLibary = myLibary.filter(Book => Book.index != index);
-    return
+
+    return;
 }
+/*
+Simple func to loop the array and update the text
+content of the read/unread button and the object status
+based on the current text content of the button
+*/
 function toggleStatus(btn){
     for(let prop in myLibary) {
         let status = btn.textContent;
@@ -81,66 +96,51 @@ function toggleStatus(btn){
         }
     }
 }
+/*
+Function called by modalAddBook to add the book to
+the table based off of the users input to the modal
+*/
 function addBookToPage(title, author, status) {
-    //const title = title;
-    // const bookCard = document.createElement('table');
-    // const bookCardHead = document.createElement('thead');
-    // const bookHeadRow = document.createElement('tr');
-    // const bookCardBody = document.createElement('tbody');
-    // bookCard.appendChild(bookCardHead);
-    // bookCard.appendChild(bookCardBody);
-    // document.getElementById('bookContainer').innerHTML = `${bookCard}`;
-        // const tableRow = document.createElement('tr');
-        // const tableTitle = document.createElement('td');
-        // tableTitle.textContent = myLibary[prop].title;
-        // tableRow.appendChild(tableTitle);
-        // bookCardBody.appendChild(tableRow);
 
-        // let table = document.getElementById('bookTable');
-        // let row = table.insertRow();
-        // let titleCell = row.insertCell();
-        // titleCell.textContent = title;
-        // let authorCell = row.insertCell();
-        // authorCell.textContent = author;
-        // let readCell = row.insertCell();
-        // readCell.textContent = status;
-        // for(let prop in myLibary) {
-        let table = document.getElementById('bookBody');
-        
-        // let titleCell = row.insertCell();
-        // titleCell.textContent = title;
-        // let authorCell = row.insertCell();
-        // authorCell.textContent = author;
-        // let readCell = row.insertCell();
-        // readCell.textContent = status;
-        // }
-      
-        for(let prop in myLibary) {
-            if(!myLibary[prop].addedToPage) {
-                myLibary[prop].addedToPage = true;
-                let row = table.insertRow(-1);
-                let titleCell = row.insertCell();
-                titleCell.textContent = title;
-                let authorCell = row.insertCell();
-                authorCell.textContent = author;
-                let readCell = row.insertCell();
-                let readCellButton = document.createElement('button');
-                readCellButton.textContent = status;
-                readCell.appendChild(readCellButton);
-                readCellButton.setAttribute('onclick', 'toggleStatus(this)');
-                let removeBook = row.insertCell();
-                let removeButton = document.createElement('button');
-                removeBook.appendChild(removeButton);
-                removeButton.textContent = `Remove Book`;
-                const bookIndex = myLibary[prop].index;
-                removeButton.setAttribute('id', bookIndex);
-                removeButton.setAttribute('data-book', 'book-button');
-                removeButton.setAttribute('onclick', 'removeRow(this)');
-                
-                console.table(myLibary)
-                
-            }
+    let table = document.getElementById('bookBody');
+    /*
+    For loop loops though the array 
+    Updates addedToPage so that the loop only adds
+    records which are not already in the table
+
+    Loop created a row and cells for each value
+    */
+    for(let prop in myLibary) {
+        if(!myLibary[prop].addedToPage) {
+            myLibary[prop].addedToPage = true;
+            let row = table.insertRow(-1);
+            let titleCell = row.insertCell();
+            titleCell.textContent = title;
+            let authorCell = row.insertCell();
+            authorCell.textContent = author;
+            /*
+            Creates button which calls toggleStatus func
+            Passes the button as the arg
+            */
+            let readCell = row.insertCell();
+            let readCellButton = document.createElement('button');
+            readCellButton.textContent = status;
+            readCell.appendChild(readCellButton);
+            readCellButton.setAttribute('onclick', 'toggleStatus(this)');
+            /*
+            Creates remove button which is used to delete the row
+            BookIndex is used to assign the Book obj array index to button
+            This is used in the removeRow func to be able to match the row 
+            to the obj in the array, so that it can be deleted
+            */
+            let removeBook = row.insertCell();
+            let removeButton = document.createElement('button');
+            removeBook.appendChild(removeButton);
+            removeButton.textContent = `Remove Book`;
+            const bookIndex = myLibary[prop].index;
+            removeButton.setAttribute('id', bookIndex);
+            removeButton.setAttribute('onclick', 'removeRow(this)');
         }
-     
+    }
     return;
 } 
