@@ -1,7 +1,7 @@
 :root {
     --white-color: #F1EDEE;
     --table-head: #3D5467;
-
+    --table-body: #8AA29E;
     --background: #131513;
 }
 /* ---------- Global Styles ---------- */
@@ -78,13 +78,15 @@ tbody tr{
     font-size: 1.25rem;
     width: 25%;
 }
+.book-Body tr{
+    background-color: var(--table-body);
+}
 .book-Body tr :nth-child(3),
 .book-Body tr :nth-child(4) {
-    background-color: var(--background);
+    background-color: #DB5461;
 }
 .book-Body td button {
     width: 100%;
-    height: 1.5rem;
     background-color: #DB5461;
     color: var(--white-color);
     font-size: 1.25rem;
