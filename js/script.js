@@ -89,17 +89,18 @@ content of the read/unread button and the object status
 based on the current text content of the button
 */
 function toggleStatus(btn){
-    for(let prop in myLibary) {
-        let status = btn.textContent;
+    let status = btn.textContent;
+    const index = btn.id;
         if (status === 'Read') {
             btn.textContent = 'Unread';
-            myLibary[prop].status = 'Unread';
-        } else {
+            myLibary[index].status = 'Unread';
+
+        } else if(status === 'Unread'){
             btn.textContent = 'Read';
-            myLibary[prop].status = 'Read';
+            myLibary[index].status = 'Read';
+          
         }
-        return;
-    }
+    return;
 }
 /*
 Function called by modalAddBook to add the book to
@@ -118,6 +119,7 @@ function addBookToPage(title, author, status) {
     for(let prop in myLibary) {
         if(!myLibary[prop].addedToPage) {
             myLibary[prop].addedToPage = true;
+            const bookIndex = myLibary[prop].index;
             let row = table.insertRow(-1);
             let titleCell = row.insertCell();
             titleCell.textContent = title;
@@ -131,6 +133,7 @@ function addBookToPage(title, author, status) {
             let readCellButton = document.createElement('button');
             readCellButton.textContent = status;
             readCell.appendChild(readCellButton);
+            readCellButton.setAttribute('id', bookIndex);
             readCellButton.setAttribute('onclick', 'toggleStatus(this)');
             /*
             Creates remove button which is used to delete the row
@@ -142,7 +145,6 @@ function addBookToPage(title, author, status) {
             let removeButton = document.createElement('button');
             removeBook.appendChild(removeButton);
             removeButton.textContent = `Remove Book`;
-            const bookIndex = myLibary[prop].index;
             removeButton.setAttribute('id', bookIndex);
             removeButton.setAttribute('onclick', 'removeRow(this)');
         }
