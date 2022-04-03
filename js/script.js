@@ -63,14 +63,13 @@ function addBookToLibary(title, author, status) {
 //     console.log('Woo this actually worked');
 // });
 function removeRow(btn) {
-    const row = btn.parentNode.parentNode;
+  
     for(let prop in myLibary) {
-        myLibary[prop].addedToPage = false;
-        if (myLibary[prop].addedToPage === false) {
+             const row = btn.parentNode.parentNode;
             row.parentNode.removeChild(row);
             const index = btn.id;
             myLibary = myLibary.filter(Book => Book.index != index);
-        }
+            return
     }
 }
 function addBookToPage(title, author, status) {
