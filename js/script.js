@@ -112,7 +112,9 @@ function addBookToPage(title, author, status) {
                 let authorCell = row.insertCell();
                 authorCell.textContent = author;
                 let readCell = row.insertCell();
-                readCell.textContent = status;
+                let readCellButton = document.createElement('button');
+                readCellButton.textContent = status;
+                readCell.appendChild(readCellButton);
                 let removeBook = row.insertCell();
                 let removeButton = document.createElement('button');
                 removeBook.appendChild(removeButton);
