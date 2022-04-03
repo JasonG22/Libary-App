@@ -1,8 +1,12 @@
 :root {
     --white-color: #F1EDEE;
-    --table-head: #3D5467;
-    --table-body: #8AA29E;
+    --dark-blue: #3D5467;
+    --light-blue: #8AA29E;
     --background: #131513;
+}
+:focus {
+    border: 3px solid  #DB5461;
+    outline: none;
 }
 /* ---------- Global Styles ---------- */
 html,
@@ -15,7 +19,7 @@ body {
 }
 th {
     font-size: 1.5rem;
-    background-color: var(--table-head);
+    background-color: var(--dark-blue);
 }
 tbody:before {line-height:1em; content:"\200C"; display:block;}
 
@@ -53,7 +57,7 @@ tbody:before {line-height:1em; content:"\200C"; display:block;}
 }
 .modal-content {
     position: relative;
-    background-color: var(--table-head);
+    background-color: var(--dark-blue);
     border: 1px solid black;
     padding: 24px;
     margin: auto;
@@ -87,7 +91,7 @@ tbody:before {line-height:1em; content:"\200C"; display:block;}
     width: 25%;
 }
 .book-Body tr{
-    background-color: var(--table-body);
+    background-color: var(--light-blue);
 }
 .book-Body tr :nth-child(3),
 .book-Body tr :nth-child(4) {
