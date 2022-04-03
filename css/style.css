@@ -11,26 +11,15 @@ body {
     padding: 0;
     width: 100vw;
     box-sizing: border-box;
-}
-body {
     background-color: var(--background);
 }
 th {
     font-size: 1.5rem;
-    padding-right: 10px;
-    margin-left: 50px;
+    background-color: var(--table-head);
 }
-td {
-    font-size: 1.25rem;
-}
-td button {
-    width: 100%;
-    background-color: #DB5461;
-    color: var(--white-color);
-    font-size: 1.25rem;
-    outline: none;
-    border-style: none;
-    border-radius: 0px;
+tbody:before {line-height:1em; content:"\200C"; display:block;}
+tbody tr{
+    background-color: #F1EDEE;
 }
 /* ---------- ID Selector Styling ----------*/ 
 #bookContainer {
@@ -82,17 +71,26 @@ td button {
 }
 
 .book-table {
-    width: 80%;
-    background-color: var(--table-head);
-    border: 1px solid black;
+    width: 80%; 
     margin: 0 auto;
 }
 .book-Body td {
-    border-right: 1px solid white;
+    font-size: 1.25rem;
     width: 25%;
 }
-.th-seperator {
-    border-right: 1px solid var(--white-color);
+.book-Body tr :nth-child(3),
+.book-Body tr :nth-child(4) {
+    background-color: var(--background);
+}
+.book-Body td button {
+    width: 100%;
+    height: 1.5rem;
+    background-color: #DB5461;
+    color: var(--white-color);
+    font-size: 1.25rem;
+    outline: none;
+    border-style: none;
+    border-radius: 0px;
 }
  
     
