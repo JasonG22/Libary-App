@@ -65,7 +65,7 @@ function addBookToLibary(title, author, status) {
 function removeRow(btn) {
   
     for(let prop in myLibary) {
-             const row = btn.parentNode.parentNode;
+            const row = btn.parentNode.parentNode;
             row.parentNode.removeChild(row);
             const index = btn.id;
             myLibary = myLibary.filter(Book => Book.index != index);
